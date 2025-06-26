@@ -6,7 +6,7 @@ link = "https://www.bbc.com/"
 source = requests.get(link).text
 
 soup = BeautifulSoup(source, "html5lib")
-titles = soup.find_all("h2")
+titles = soup.find_all("h2", attrs={"data-testid": "card-headline"})
 
 """for title in titles:
     print(title.text)"""
